@@ -1,27 +1,65 @@
-# Assignment1
+# Angular Web Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+This is a client-side web application built using Angular 18. The application includes client-side navigation, API consumption using Angular service with HTTP client, and reactive forms. The application is deployed to a public server or platform.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Client-side navigation with Angular Router
+- API data consumption using Angular service and HTTP client
+- Reactive forms with validation
+- Deployed to a public server or platform
 
-## Code scaffolding
+## Table of Contents
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Deployment](#deployment)
+- [License](#license)
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository:
 
-## Running unit tests
+   ```bash
+   git clone git@github.com:2024-Summer-ITE-5425-0NA/angular-assignment-Jaysojitra13.git
+   cd angular-web-app
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Install the dependencies:
 
-## Running end-to-end tests
+   ```bash
+   npm install
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Usage
 
-## Further help
+1. Run the development server:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+   ```bash
+   ng serve
+   ```
+
+### Pages
+
+- **Home Page**: A simple landing page with introductory text.
+- **API Data Page**: Consumes data from a public API and displays it.
+- **Form Page**: Contains a reactive form to submit user feedback with validation.
+
+### Services
+
+- **ApiService**: Handles API requests using Angular's HttpClient.
+
+### Components
+
+- **HomeComponent**: Displays the home page.
+- **ApiDataComponent**: Displays data from the API.
+- **FormComponent**: Contains the reactive form.
+
+## Deployment
+
+1. Build the application for production:
+
+   ```bash
+   ng build --prod
+   ```
