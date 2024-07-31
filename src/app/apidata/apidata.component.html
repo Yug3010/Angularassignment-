@@ -1,0 +1,14 @@
+<div class="movie-card" *ngFor="let movie of movies">
+  <div class="movie-rank">Rank: {{ movie.rank }}</div>
+  <div class="movie-image">
+    <img [src]="movie.image" [alt]="movie.title" />
+  </div>
+  <div class="movie-details">
+    <h2 class="movie-title">{{ movie.title }}</h2>
+    <p class="movie-year">{{ movie.year }}</p>
+    <p class="movie-rating">Rating: {{ movie.rating }}</p>
+    <p class="movie-genre">Genre: {{ movie.genre.join(", ") }}</p>
+    <p class="movie-description">{{ movie.description }}</p>
+    <a [href]="movie.imdb_link" target="_blank">View on IMDb</a>
+  </div>
+</div>

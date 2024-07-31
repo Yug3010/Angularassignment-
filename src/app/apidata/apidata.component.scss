@@ -1,0 +1,64 @@
+.movie-card {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-rank {
+  font-size: 24px;
+  font-weight: bold;
+  color: #444;
+  margin-right: 16px;
+}
+
+.movie-image img {
+  border-radius: 8px;
+  max-width: 150px;
+  max-height: 225px;
+  object-fit: cover;
+}
+
+.movie-details {
+  margin-left: 16px;
+}
+
+.movie-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.movie-year {
+  font-size: 16px;
+  color: #888;
+}
+
+.movie-rating {
+  font-size: 18px;
+  color: #444;
+}
+
+.movie-genre {
+  font-size: 16px;
+  color: #666;
+}
+
+.movie-description {
+  font-size: 14px;
+  color: #333;
+}
+
+.movie-details a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.movie-details a:hover {
+  text-decoration: underline;
+}
