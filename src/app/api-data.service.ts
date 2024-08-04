@@ -11,7 +11,7 @@ export class ApiDataService {
   private apiUrl = 'https://newsapi90.p.rapidapi.com/topic?topicId=CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXlnQVAB&language=en-US&region=US'
   private headers = {
     'x-rapidapi-host': 'newsapi90.p.rapidapi.com',
-    'x-rapidapi-key': '4ed10f7638mshb1e8ad04ac8dfb1p110c31jsn62e8701c518a',
+    'x-rapidapi-key': '94ff45c912msh37e73e2315aff12p19b5b8jsn37819de57d62',
     // 'Content-Type': 'application/json'
   };
 
