@@ -7,17 +7,27 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './apidata.component.html',
-  styleUrl: './apidata.component.scss',
+  styleUrls: ['./apidata.component.scss'],
 })
 export class ApidataComponent implements OnInit {
   constructor(private dataService: ApiDataService) {}
 
-  movies: any[] = [];
+  // Define the appropriate type for your data
+  newsList: any[] = [];
 
   ngOnInit(): void {
-    this.dataService.getItems().subscribe((data) => {
-      this.movies = data.slice(0, 10);
-      console.log('Data ==> ', this.movies);
-    });
+    this.dataService.getItems().subscribe(
+      (data: any) => {
+        console.log('Received data:', data);
+        if (Array.isArray(data)) {
+          this.newsList = data;
+        } else {
+          console.error('Expected data to be an array, but received:', data);
+        }
+      },
+      (error) => {
+        console.error('Error fetching data:', error);
+      }
+    );
   }
 }

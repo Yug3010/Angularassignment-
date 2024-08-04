@@ -1,64 +1,112 @@
-.movie-card {
+/* Styles for news card */
+.news-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 900px;
+  overflow: hidden;
+}
+
+.news-header {
   display: flex;
-  flex-direction: row;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.movie-rank {
-  font-size: 24px;
-  font-weight: bold;
-  color: #444;
-  margin-right: 16px;
-}
-
-.movie-image img {
-  border-radius: 8px;
-  max-width: 150px;
-  max-height: 225px;
+.news-image {
+  border-radius: 10px;
+  height: 150px;
+  width: 150px;
   object-fit: cover;
+  margin-right: 20px;
 }
 
-.movie-details {
-  margin-left: 16px;
-}
-
-.movie-title {
-  font-size: 24px;
+.news-title {
+  font-size: 1.8em;
   font-weight: bold;
   margin: 0;
-}
-
-.movie-year {
-  font-size: 16px;
-  color: #888;
-}
-
-.movie-rating {
-  font-size: 18px;
-  color: #444;
-}
-
-.movie-genre {
-  font-size: 16px;
-  color: #666;
-}
-
-.movie-description {
-  font-size: 14px;
   color: #333;
 }
 
-.movie-details a {
+.news-publisher {
+  font-size: 1em;
+  color: #888;
+  margin: 5px 0;
+}
+
+.news-preview {
+  font-size: 1em;
+  color: #555;
+  margin: 20px 0;
+}
+
+.news-link {
   display: inline-block;
-  margin-top: 8px;
+  font-size: 1em;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #007bff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.news-link:hover {
+  background-color: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Styles for related articles */
+.related-articles {
+  margin-top: 20px;
+}
+
+.related-article {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.related-image {
+  border-radius: 8px;
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.related-content {
+  flex: 1;
+}
+
+.related-title {
+  font-size: 1em;
+  color: #333;
+  margin: 0;
+}
+
+.related-link {
+  font-size: 0.9em;
   color: #007bff;
   text-decoration: none;
 }
 
-.movie-details a:hover {
+.related-link:hover {
   text-decoration: underline;
+}
+
+/* Heading style for related articles section */
+h3 {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0;
 }

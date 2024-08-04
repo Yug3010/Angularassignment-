@@ -1,31 +1,40 @@
+/* Navbar Styles */
 .navbar {
-  background-color: #333;
-  padding: 1rem;
+  background-color: #007bff; /* Primary color for the navbar background */
+  padding: 0.8rem 1.5rem; /* Padding for spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
 .nav-list {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  margin: 0;
-  padding: 0;
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Flexbox for horizontal alignment */
+  justify-content: center; /* Center align items */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 .nav-item {
-  margin: 0;
+  margin: 0 1rem; /* Horizontal spacing between items */
 }
 
 .nav-item a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 1.1rem; /* Font size */
+  font-weight: 500; /* Font weight */
+  transition: color 0.3s, background-color 0.3s; /* Smooth transition effect */
+  padding: 0.5rem 1rem; /* Padding around links */
+  border-radius: 4px; /* Rounded corners for links */
 }
 
-.nav-item a:hover {
-  text-decoration: underline;
+.nav-item a:hover,
+.nav-item a.active {
+  color: #007bff; /* Active and hover text color */
+  background-color: white; /* Background color for active and hover */
 }
 
-.active {
-  font-weight: bold;
-  color: yellow !important;
+.nav-item a.active {
+  font-weight: bold; /* Make active link bold */
+  background-color: #f8f9fa; /* Background color for active link */
+  border-bottom: 2px solid #007bff; /* Underline effect for active link */
 }

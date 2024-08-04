@@ -1,39 +1,74 @@
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input id="name" formControlName="name" class="form-control" />
-    <div *ngIf="myForm.controls['name'].errors?.['required']">
-      Name is required.
+<div class="form-container">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input id="firstName" formControlName="firstName" class="form-control" />
+      <div *ngIf="submitted && myForm.controls['firstName'].touched && myForm.controls['firstName'].invalid" class="error-message">
+        <div *ngIf="myForm.controls['firstName'].errors?.['required']">
+          First name is required.
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input id="email" formControlName="email" class="form-control" />
-    <div *ngIf="myForm.controls['email'].errors?.['required']">
-      Email is required.
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" formControlName="lastName" class="form-control" />
+      <div *ngIf="submitted && myForm.controls['lastName'].touched && myForm.controls['lastName'].invalid" class="error-message">
+        <div *ngIf="myForm.controls['lastName'].errors?.['required']">
+          Last name is required.
+        </div>
+      </div>
     </div>
-    <div *ngIf="myForm.controls['email'].errors?.['email']">
-      Email must be a valid email address.
-    </div>
-  </div>
 
-  <div class="form-group">
-    <label for="message">Message</label>
-    <textarea
-      id="message"
-      formControlName="message"
-      class="form-control"
-    ></textarea>
-    <div *ngIf="myForm.controls['message'].errors?.['required']">
-      Message is required.
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" class="form-control" />
+      <div *ngIf="submitted && myForm.controls['email'].touched && myForm.controls['email'].invalid" class="error-message">
+        <div *ngIf="myForm.controls['email'].errors?.['required']">
+          Email is required.
+        </div>
+        <div *ngIf="myForm.controls['email'].errors?.['email']">
+          Email must be a valid email address.
+        </div>
+      </div>
     </div>
-    <div *ngIf="myForm.controls['message'].errors?.['minlength']">
-      Message must be at least 10 characters long.
-    </div>
-  </div>
 
-  <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">
-    Submit
-  </button>
-</form>
+    <div class="form-group">
+      <label for="dob">Date of Birth</label>
+      <input id="dob" formControlName="dob" type="date" class="form-control" />
+      <div *ngIf="submitted && myForm.controls['dob'].touched && myForm.controls['dob'].invalid" class="error-message">
+        <div *ngIf="myForm.controls['dob'].errors?.['required']">
+          Date of Birth is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="contactNumber">Contact Number</label>
+      <input id="contactNumber" formControlName="contactNumber" type="tel" class="form-control" placeholder="e.g., +1234567890" />
+      <div *ngIf="submitted && myForm.controls['contactNumber'].touched && myForm.controls['contactNumber'].invalid" class="error-message">
+        <div *ngIf="myForm.controls['contactNumber'].errors?.['required']">
+          Contact number is required.
+        </div>
+        <div *ngIf="myForm.controls['contactNumber'].errors?.['pattern']">
+          Contact number must be a valid phone number.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" formControlName="message" class="form-control"></textarea>
+      <div *ngIf="submitted && myForm.controls['message'].touched && myForm.controls['message'].invalid" class="error-message">
+        <div *ngIf="myForm.controls['message'].errors?.['required']">
+          Message is required.
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      Submit
+    </button>
+  </form>
+</div>

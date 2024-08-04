@@ -1,43 +1,33 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './form.component.html',
-  styleUrl: './form.component.scss',
+  styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
   myForm: FormGroup;
+  submitted = false; // Added property
 
   constructor(private fb: FormBuilder) {
     this.myForm = this.fb.group({
-      name: ['', [Validators.required]],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      dob: ['', Validators.required],
+      contactNumber: ['', [Validators.required, Validators.pattern('^\\+?[1-9]\\d{1,14}$')]], // Example pattern
       email: ['', [Validators.required, Validators.email]],
-      message: ['', [Validators.required, Validators.minLength(10)]],
+      message: ['', [Validators.required]]
     });
   }
 
-  get name() {
-    return this.myForm.get('name');
-  }
-
-  get email() {
-    return this.myForm.get('email');
-  }
-
-  get message() {
-    return this.myForm.get('message');
-  }
-
   onSubmit(): void {
+    this.submitted = true; // Set submitted to true on form submission
     if (this.myForm.valid) {
-      console.log('Form Submitted!', this.myForm.value);
-    } else {
-      console.log('Form not valid');
+      console.log('Form Submitted', this.myForm.value);
     }
   }
 }
